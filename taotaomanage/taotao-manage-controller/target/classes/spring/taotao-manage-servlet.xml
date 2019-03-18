@@ -8,16 +8,17 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
 	<!-- 注解驱动 -->
-	<mvc:annotation-driven />
-		<!--<mvc:message-converters register-defaults="true">-->
-			<!--&lt;!&ndash; 自定义String类型的消息转化器 &ndash;&gt;-->
-			<!--&lt;!&ndash; <bean class="org.springframework.http.converter.StringHttpMessageConverter">-->
-				<!--<constructor-arg index="0" value="UTF-8"/>-->
-			<!--</bean> &ndash;&gt;-->
-			<!--&lt;!&ndash;<bean class="com.taotao.manage.controller">&ndash;&gt;-->
-				<!--&lt;!&ndash;<property name="callbackName" value="callback"/>&ndash;&gt;-->
-			<!--&lt;!&ndash;</bean>&ndash;&gt;-->
-		<!--</mvc:message-converters>-->
+	<mvc:annotation-driven>
+		<mvc:message-converters register-defaults = "true">
+			<bean class="org.springframework.http.converter.StringHttpMessageConverter">
+				<constructor-arg index="0" value="UTF-8" />
+			</bean>
+			<bean class="com.taotao.common.spring.extend.CallbackMappingJackson2HttpMessageConverter">
+				<property name="callbackName" value="callback" />
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+
 
 	<!-- 扫描Controller -->
 	<context:component-scan base-package="com.taotao.manage.controller"/>

@@ -1,1 +1,2 @@
-com\taotao\web\IndexController.class
+com\taotao\web\controller\IndexController.class
+com\taotao\web\service\IndexService.class

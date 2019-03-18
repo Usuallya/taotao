@@ -43,13 +43,32 @@
     <bean id="jackson_hmc" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter" />
     -->
 
-    <context:component-scan base-package = "com.taotao.manager.controller"></context:component-scan>
+    <context:component-scan base-package = "com.taotao.web.controller" />
 
     <!-- 定义视图解析器 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"></property>
         <property name="suffix" value=".jsp"></property>
     </bean>
+
+    <!-- 这里注意，如果扫描的包里包含了service，那么这里必须配置占位符，否则taotao_manage_url的value注入不成功
+     这可能是spring的机制问题，在spring容器中先注入了taotao，然后springmvc又扫描到了，但是没有占位符，就会错误
+     而如果想不加这个bean，就需要让mvc扫描的范围限定在controller-->
+    <!--<bean-->
+            <!--class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">-->
+        <!--&lt;!&ndash; 允许JVM参数覆盖 &ndash;&gt;-->
+        <!--<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />-->
+        <!--&lt;!&ndash; 忽略没有找到的资源文件 &ndash;&gt;-->
+        <!--<property name="ignoreResourceNotFound" value="true" />-->
+        <!--&lt;!&ndash; 配置资源文件 &ndash;&gt;-->
+        <!--<property name="locations">-->
+            <!--<list>-->
+                <!--<value>classpath:env.properties</value>-->
+                <!--<value>classpath:httpclient.properties</value>-->
+            <!--</list>-->
+        <!--</property>-->
+    <!--</bean>-->
+
     <bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
         <property name="supportedMediaTypes">
             <list>

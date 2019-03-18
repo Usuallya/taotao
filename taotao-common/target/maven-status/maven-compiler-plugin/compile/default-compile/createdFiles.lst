@@ -1,2 +1,6 @@
 com\taotao\common\bean\PicUploadResult.class
+com\taotao\common\httpclient\IdleConnectionEvictor.class
 com\taotao\common\bean\EasyUIResult.class
+com\taotao\common\service\ApiService.class
+com\taotao\common\httpclient\HttpResult.class
+com\taotao\common\spring\extend\CallbackMappingJackson2HttpMessageConverter.class

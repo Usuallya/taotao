@@ -34,6 +34,7 @@ public class ContentCategoryController {
             record.setParentId(pid);
             List<ContentCategory> list = this.contentCategoryService.queryListByWhere(record);
             if (null == list || list.isEmpty()) {
+                // 404
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
             }
             return ResponseEntity.ok(list);

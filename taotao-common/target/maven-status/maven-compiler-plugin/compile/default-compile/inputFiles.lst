@@ -1,2 +1,6 @@
-F:\Git\taotao\taotao-common\src\main\java\com\taotao\common\bean\EasyUIResult.java
-F:\Git\taotao\taotao-common\src\main\java\com\taotao\common\bean\PicUploadResult.java
+F:\Git\taotao\taotao\taotao-common\src\main\java\com\taotao\common\bean\EasyUIResult.java
+F:\Git\taotao\taotao\taotao-common\src\main\java\com\taotao\common\httpclient\HttpResult.java
+F:\Git\taotao\taotao\taotao-common\src\main\java\com\taotao\common\bean\PicUploadResult.java
+F:\Git\taotao\taotao\taotao-common\src\main\java\com\taotao\common\service\ApiService.java
+F:\Git\taotao\taotao\taotao-common\src\main\java\com\taotao\common\spring\extend\CallbackMappingJackson2HttpMessageConverter.java
+F:\Git\taotao\taotao\taotao-common\src\main\java\com\taotao\common\httpclient\IdleConnectionEvictor.java
